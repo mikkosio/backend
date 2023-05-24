@@ -80,7 +80,6 @@ app.use((req, res, next) => {
 });
 
 app.use("/suggestions", suggRoutes);
-app.use(express.static(path.join(__dirname, 'build')));
 
 app.get("/", (req, res) => {
   res.send("Hello World!");
@@ -535,10 +534,6 @@ app.post("/save-flight", async (req, res) => {
 });
 
 ///////////////////////////////////////////////////////////////////////////////////////
-
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'build', 'index.html'));
-});
 
 app.post("/logout", (req, res) => {
   // console.log(req);
